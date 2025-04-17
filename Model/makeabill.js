@@ -183,7 +183,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p><strong>Customer:</strong> Walk-in Customer</p>
                 </div>
             </div>
-            <h2 style="text-align: center; margin-bottom: 20px; color: #2c3e50;">Order Details</h2>
             <table class="invoice-table">
                 <thead>
                     <tr>
@@ -333,7 +332,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update cart summary
         updateCartSummary();
     }
-    
 
     // Update quantity functions
     function decreaseQuantity(e) {
@@ -403,21 +401,52 @@ document.addEventListener('DOMContentLoaded', function() {
     // Checkout functions
     function showCheckoutModal() {
         if (cart.length === 0) {
-            alert('No items in the cart, Please add some to proceed.');
+            alert('Your cart is empty. Please add items to proceed.');
             return;
         }
         
-        // Generate order summary
+        // Generate detailed order summary
         orderSummary.innerHTML = '';
         cart.forEach(item => {
             const orderItem = document.createElement('div');
             orderItem.className = 'order-summary-item';
             orderItem.innerHTML = `
-                <span>${item.name} (${item.quantity} x ₹${item.price.toFixed(2)})</span>
-                <span>₹${(item.price * item.quantity).toFixed(2)}</span>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                    <span><strong>${item.name}</strong></span>
+                    <span>₹${item.price.toFixed(2)} × ${item.quantity}</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                    <span></span>
+                    <span>₹${(item.price * item.quantity).toFixed(2)}</span>
+                </div>
             `;
             orderSummary.appendChild(orderItem);
         });
+        
+        // Add totals to order summary
+        const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+        const tax = subtotal * 0.05;
+        const total = subtotal + tax;
+        
+        const totalsDiv = document.createElement('div');
+        totalsDiv.className = 'order-summary-totals';
+        totalsDiv.innerHTML = `
+            <div style="border-top: 1px solid #eee; margin-top: 10px; padding-top: 10px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                    <span><strong>Subtotal:</strong></span>
+                    <span>₹${subtotal.toFixed(2)}</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                    <span><strong>Tax (5%):</strong></span>
+                    <span>₹${tax.toFixed(2)}</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 1.1em;">
+                    <span><strong>Total:</strong></span>
+                    <span>₹${total.toFixed(2)}</span>
+                </div>
+            </div>
+        `;
+        orderSummary.appendChild(totalsDiv);
         
         // Show modal
         checkoutModal.style.display = 'flex';
@@ -429,7 +458,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function printInvoice() {
         if (cart.length === 0) {
-            alert('No items in the cart, Please add some to proceed.');
+            alert('No items in the cart to print invoice.');
             return;
         }
 
