@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory</title>
+    <link rel="stylesheet" href="../css/inventory.css">
+    <script src="../../Model/inventory.js" defer></script>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Dashboard</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href=""></a></li>
+            <a href="../Html/dashboard.html" class="underline"><li>Overview</li></a>
+            <li><a href="../Html/products.html" class="underline">Products</a></li>
+            <li class="active"><a href="../Html/inventory.html" class="underline">Inventory</a></li>
+            <li><a href="../Html/makeabill.html" class="underline">Billing</a></li>
+            
+            
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="dashboard-header">
+            <h1>Inventory</h1>
+            <div class="search-bar">
+                <span>🔍</span>
+                <input type="text" placeholder="Search products, categories, SKU">
+            </div>
+            <div class="profile">
+                <a href="../Html/index.html"><img src="M-removebg-preview.png" alt="profile" class="profileimg"></a>
+                
+            </div>
+        </div>
+
+        <!-- Inventory Controls -->
+        <div class="inventory-controls">
+            <button class="add-product-btn" onclick="window.location.href='add-product.html'">+ Add Product</button>
+            <div class="sort-filters">
+                <select id="category-filter">
+                    <option value="all">All Categories</option>
+                    <option value="food">Food</option>
+                    <option value="cleaning">Cleaning</option>
+                    <option value="beverages">Beverages</option>
+                    <option value="snacks">Snacks</option>
+                </select>
+                <select id="availability-filter">
+                    <option value="all">All Items</option>
+                    <option value="in-stock">In Stock</option>
+                    <option value="low-stock">Low Stock</option>
+                    <option value="out-of-stock">Out of Stock</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Inventory Table -->
+        <div class="inventory-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Product Name</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PRD001</td>
+                        <td>Surf Excel</td>
+                        <td>Cleaning</td>
+                        <td>12</td>
+                        <td>₹ 100</td>
+                        <td><span class="status in-stock">In Stock</span></td>
+                        <td>
+                            <button class="edit-btn">Edit</button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>PRD002</td>
+                        <td>Rin</td>
+                        <td>Cleaning</td>
+                        <td>5</td>
+                        <td>₹ 207</td>
+                        <td><span class="status low-stock">Low Stock</span></td>
+                        <td>
+                            <button class="edit-btn">Edit</button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>PRD003</td>
+                        <td>Parle G</td>
+                        <td>Food</td>
+                        <td>0</td>
+                        <td>₹ 105</td>
+                        <td><span class="status out-of-stock">Out of Stock</span></td>
+                        <td>
+                            <button class="edit-btn">Edit</button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>PRD004</td>
+                        <td>Tata Salt</td>
+                        <td>Food</td>
+                        <td>25</td>
+                        <td>₹ 22</td>
+                        <td><span class="status in-stock">In Stock</span></td>
+                        <td>
+                            <button class="edit-btn">Edit</button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>PRD005</td>
+                        <td>Lays</td>
+                        <td>Snacks</td>
+                        <td>8</td>
+                        <td>₹ 20</td>
+                        <td><span class="status low-stock">Low Stock</span></td>
+                        <td>
+                            <button class="edit-btn">Edit</button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Inventory Summary -->
+        <div class="inventory-summary">
+            <div class="summary-card">
+                <h3>Total Products</h3>
+                <p>45</p>
+            </div>
+            <div class="summary-card">
+                <h3>In Stock</h3>
+                <p>32</p>
+            </div>
+            <div class="summary-card">
+                <h3>Low Stock</h3>
+                <p>8</p>
+            </div>
+            <div class="summary-card">
+                <h3>Out of Stock</h3>
+                <p>5</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

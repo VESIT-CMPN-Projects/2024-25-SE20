@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="../../controller/dashboard.js"></script>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Dashboard</h2>
+        </div>
+        <ul class="sidebar-menu">
+           
+                <li class="active" href="../../controller/dashboard.js" class="underline">Overview</li>
+           
+            <a href="../Html/products.html" class="underline">
+                <li >Products</li>
+            </a>
+            <a href="../Html/inventory.html" class="underline"><li>Inventory</li></a>
+            
+            <a href="../Html/makeabill.html" class="underline">
+                <li>Billing</li>
+            </a>
+            
+           
+            
+           
+
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="dashboard-header">
+            <h1>Top Selling Stock</h1>
+            <div class="search-bar">
+                <span>🔍</span>
+                <input type="text" placeholder="Search product, supplier, order,low-stock">
+            </div>
+            <div class="profile">
+                <a href="index.html"> <img src="M-removebg-preview.png" alt="profile" class="profileimg"></a>
+               
+            </div>
+        </div>
+
+        <!-- Top Selling Table -->
+        <div class="top-selling">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Sold Quantity</th>
+                        <th>Remaining Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Surf Excel</td>
+                        <td>30</td>
+                        <td>12</td>
+                        <td>₹ 100</td>
+                    </tr>
+                    <tr>
+                        <td>Rin</td>
+                        <td>21</td>
+                        <td>15</td>
+                        <td>₹ 207</td>
+                    </tr>
+                    <tr>
+                        <td>Parle G</td>
+                        <td>18</td>
+                        <td>17</td>
+                        <td>₹ 105</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="dashboard-cards">
+            <div class="card">
+                <h2>Inventory Summary</h2>
+                <div class="summary-item">
+                    <div class="summary-number">888</div>
+                    <div class="summary-label">Quantity in Hand</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-number">200</div>
+                    <div class="summary-label">To be received</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Product Summary</h2>
+                <div class="summary-item">
+                    <div class="summary-number">31</div>
+                    <div class="summary-label">Number of Suppliers</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-number">21</div>
+                    <div class="summary-label">Number of Categories</div>
+                </div>
+            </div>
+
+            <div class="card low-quantity">
+                <h2>Low Quantity Stock</h2>
+                <ul>
+                    <li>
+                        <span class="product-name">Tata Salt</span>
+                        <span class="quantity">Remaining Quantity : 10 Packet</span>
+                    </li>
+                    <li>
+                        <span class="product-name">Lays</span>
+                        <span class="quantity">Remaining Quantity : 15 Packet</span>
+                    </li>
+                    <li>
+                        <span class="product-name">Lays</span>
+                        <span class="quantity">Remaining Quantity : 18 Packet</span>
+                    </li>
+                    <li>See All</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Settings -->
+        
+    </div>

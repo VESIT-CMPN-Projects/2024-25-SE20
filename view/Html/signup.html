@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | Provision Stores</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/signup.css">
+  <script src="../../controller/signup.js"></script>
+</head>
+<body>
+  <div class="signup-container">
+    <div class="signup-card">
+      <!-- Header -->
+      <div class="signup-header">
+        <img src="mkp.jpg" alt="logo">
+      </div>
+      
+      <!-- Signup Form -->
+      <div class="signup-content">
+        <h2>Create an account</h2>
+        
+        <form id="signupForm" class="signup-form">
+          <div class="form-group">
+            <label for="name">Full Name*</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email*</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+          </div>
+          
+          <div class="form-group">
+            <label for="password">Password*</label>
+            <input type="password" id="password" name="password" required minlength="8" placeholder="Create a password">
+            <span class="hint">Must be at least 8 characters</span>
+          </div>
+          
+          <div class="checkbox-group">
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I agree to the <a href="#">Terms and Conditions</a></label>
+          </div>
+          
+          <button type="submit" class="submit-btn">Get Started</button>
+        </form>
+        
+        <div class="divider">
+          <span>Or continue with</span>
+        </div>
+        
+        <button class="google-btn">
+          <img src="https://th.bing.com/th/id/OIP.Din44az7iZZDfbsrD1kfGQHaHa?w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Google logo">
+          <span>Google</span>
+        </button>
+        
+        <p class="login-link">
+          Already have an account? <a href="index.html">Sign in</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview Product</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Dashboard</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="../Html/dashboard.html" class="underline">Overview</a></li>
+            <li><a href="../Html/products.html" class="underline">Products</a></li>
+            <li><a href="../Html/inventory.html" class="underline">Inventory</a></li>
+            <li><a href="../Html/makeabill.html" class="underline">Billing</a></li>
+            
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="dashboard-header">
+            <h1>Preview Product</h1>
+            <div class="profile">
+                <img src="M-removebg-preview.png" alt="profile" class="profileimg">
+            </div>
+        </div>
+
+        <!-- Product Preview -->
+        <div class="product-preview">
+            <div class="preview-header">
+                <h2>Confirm Product Details</h2>
+                <p>Review the information below before adding to inventory</p>
+            </div>
+            
+            <div class="preview-content">
+                <div class="preview-image">
+                    <img src="https://via.placeholder.com/200" alt="Product Image" id="previewImage">
+                </div>
+                
+                <div class="preview-details">
+                    <h3 id="previewName">Product Name</h3>
+                    <p class="category" id="previewCategory">Category: </p>
+                    <p class="quantity" id="previewQuantity">Quantity: </p>
+                    <p class="price" id="previewPrice">Price: ₹</p>
+                    <p class="description" id="previewDescription">Description: </p>
+                </div>
+            </div>
+            
+            <div class="preview-actions">
+                <button class="back-btn" onclick="window.history.back()">Back to Edit</button>
+                <button class="confirm-btn" onclick="addProduct()">Confirm & Add Product</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // Set preview values from URL parameters
+        document.getElementById('previewName').textContent = urlParams.get('productName');
+        document.getElementById('previewCategory').textContent = 'Category: ' + urlParams.get('productCategory');
+        document.getElementById('previewQuantity').textContent = 'Quantity: ' + urlParams.get('productQuantity');
+        document.getElementById('previewPrice').textContent = 'Price: ₹' + urlParams.get('productPrice');
+        document.getElementById('previewDescription').textContent = 'Description: ' + (urlParams.get('productDescription') || 'None');
+        
+        function addProduct() {
+            alert('Product added successfully!');
+            window.location.href = './inventory.html'; 
+        }
+    </script>
+</body>
+</html>

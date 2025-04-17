@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maa Krupa Provision - Billing</title>
+    <link rel="stylesheet" href="../css/makeabill.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="../../Model/makeabill.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <h1>Maa Krupa Provision</h1>
+        </div>
+        <ul class="menu">
+            <a href="../Html/dashboard.html" class="underline"><li>Overview</li></a>
+            <a href="../Html/products.html" class="underline"><li>Products</li></a>
+            <a href="../Html/inventory.html" class="underline"><li>Inventory</li></a>
+            <li class="active" class="underline">Billing</li>
+           
+           
+            
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Product Billing</h1>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+
+        <div class="products-container">
+            <div class="products-header">
+                <h2>Available Products</h2>
+                <div class="search-bar">
+                    <input type="text" id="product-search" placeholder="Search products...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be dynamically added here -->
+            </div>
+        </div>
+
+        <div class="cart-section">
+            <div class="cart-header">
+                <h2>Shopping Cart</h2>
+                <div class="btn-group">
+                    <button class="btn" id="clear-cart-btn">Clear Cart</button>
+                    <button class="btn" id="checkout-btn">Checkout</button>
+                </div>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <div class="empty-cart">Your cart is empty</div>
+            </div>
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">₹0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax (5%):</span>
+                    <span id="tax">₹0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span id="total">₹0.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Order Summary</h2>
+                <button class="close-btn" id="close-checkout">&times;</button>
+            </div>
+            <div class="order-summary" id="order-summary">
+                <!-- Order summary will be inserted here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn" id="print-invoice-btn">Print Invoice</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../Model/makeabill.js"></script>
+</body>
+</html>
